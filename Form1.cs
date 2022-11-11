@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace newRepoGonellaAlberto
 {
-    public partial class Form1 : Form
+    public partial class frmProvaGitHub : Form
     {
-        public Form1()
+        public frmProvaGitHub()
         {
             InitializeComponent();
         }
