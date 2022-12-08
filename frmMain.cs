@@ -33,16 +33,15 @@ namespace newRepoGonellaAlberto
             if (fileManager.Modificato)
                 salvaConNome();
         }
-        private void frmAlbyPad_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmAlbyPad_FormClosing(object sender, FormClosingEventArgs e) 
         {
             if (fileManager.Modificato)
-                if (MessageBox.Show("Vuoi salvare prima di uscire?",
-                    "Salvataggio", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                if (salvaPrimaDi("chiudere"))
                     salva();
-                }
         }
+        private void nuovoToolStripButton_Click(object sender, EventArgs e) => nuovo();
+        private void nuovoToolStripMenuItem_Click(object sender, EventArgs e) => nuovo();
+        private void esciToolStripMenuItem_Click(object sender, EventArgs e) => esci();
 
         #endregion
 
@@ -50,14 +49,18 @@ namespace newRepoGonellaAlberto
 
         private void apri()
         {
+            if(salvaPrimaDi("creare un nuovo file"))
+                if (fileManager.chiediSalvaConNome())           
+                    salva();
             fileManager.apri();
-            rtb.LoadFile(fileManager.FilePath);
+            if(!string.IsNullOrEmpty(fileManager.FilePath))
+                rtb.LoadFile(fileManager.FilePath);
         }
 
         private void salva()
         {
             if (fileManager.Modificato)
-                if (fileManager.FilePath != "")
+                if (!string.IsNullOrEmpty(fileManager.FilePath))
                     rtb.SaveFile(fileManager.FilePath);
                 else
                     salvaConNome();                     
@@ -68,6 +71,31 @@ namespace newRepoGonellaAlberto
             if (fileManager.chiediSalvaConNome())
                 rtb.SaveFile(fileManager.FilePath);
         }
+
+        private void nuovo()
+        {
+            if (fileManager.Modificato)
+            {
+                DialogResult dr = MessageBox.Show("Vuoi salvare prima di creare un nuovo file?", "Salvare", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (dr != DialogResult.Cancel)
+                {
+                    if (dr == DialogResult.Yes)
+                    {
+                        if (fileManager.chiediSalvaConNome())
+                            rtb.SaveFile(fileManager.FilePath);
+                    }
+                    fileManager.Modificato = false;
+                    fileManager.FilePath = "";
+                    rtb.Clear();
+                }
+            }
+        }
+
+        private void esci() => Close();
+
+        private bool salvaPrimaDi(string domanda) => MessageBox.Show($"Vuoi salvare prima di {domanda}?",
+                    "Salvataggio", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes;
 
         #endregion
     }
