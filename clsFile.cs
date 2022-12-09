@@ -45,7 +45,7 @@ namespace newRepoGonellaAlberto
             dlgApri.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             if (dlgApri.ShowDialog() == DialogResult.OK)           
-                FilePath = dlgApri.FileName;          
+                FilePath = dlgApri.FileName;
         }
 
         public bool chiediSalvaConNome()

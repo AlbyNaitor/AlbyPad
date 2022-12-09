@@ -8,6 +8,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
+using DevExpress.LookAndFeel;
+using DevExpress.Office.Crypto;
+using DevExpress.XtraBars.Objects;
+using DevExpress.XtraBars.Ribbon;
 
 namespace newRepoGonellaAlberto
 {
@@ -18,30 +23,35 @@ namespace newRepoGonellaAlberto
         public frmAlbyPad()
         {
             InitializeComponent();
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.WXICompact);
+            rbn.ToolbarLocation = RibbonQuickAccessToolbarLocation.Hidden;
             fileManager = new clsFile();
         }
 
         #region richiami funzioni
 
-        private void apriToolStripMenuItem_Click(object sender, EventArgs e) => apri();
-        private void apriToolStripButton_Click(object sender, EventArgs e) => apri();
-        private void rtb_TextChanged(object sender, EventArgs e) => fileManager.Modificato = true;
-        private void salvaToolStripButton_Click(object sender, EventArgs e) => salva();
-        private void salvaToolStripMenuItem_Click(object sender, EventArgs e) => salva();
-        private void salvaconnomeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bvbNuovo_ItemClick(object sender, DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs e) => nuovo();
+        private void bvbApri_ItemClick(object sender, DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs e) => apri();
+        private void bvbSalva_ItemClick_1(object sender, BackstageViewItemEventArgs e) => salva();
+        private void bvbSalvaConNome_ItemClick(object sender, DevExpress.XtraBars.Ribbon.BackstageViewItemEventArgs e)
         {
             if (fileManager.Modificato)
                 salvaConNome();
         }
+
+        private void rtb_TextChanged_1(object sender, EventArgs e) => fileManager.Modificato = true;
         private void frmAlbyPad_FormClosing(object sender, FormClosingEventArgs e) 
         {
             if (fileManager.Modificato)
                 if (salvaPrimaDi("chiudere"))
                     salva();
         }
-        private void nuovoToolStripButton_Click(object sender, EventArgs e) => nuovo();
-        private void nuovoToolStripMenuItem_Click(object sender, EventArgs e) => nuovo();
-        private void esciToolStripMenuItem_Click(object sender, EventArgs e) => esci();
+        private void barButtonEsci_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => esci();
+
+        private void bbiIncolla_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => incolla();
+        private void bbiCopia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => copia();
+        private void bbiTaglia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => taglia();
+
 
         #endregion
 
@@ -96,6 +106,12 @@ namespace newRepoGonellaAlberto
         private bool salvaPrimaDi(string domanda) => MessageBox.Show($"Vuoi salvare prima di {domanda}?",
                     "Salvataggio", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes;
+
+        private void taglia() => rtb.Cut();
+
+        private void incolla() => rtb.Paste();
+
+        private void copia() => rtb.Copy();
 
         #endregion
     }
