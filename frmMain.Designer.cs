@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlbyPad));
-            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.rtb = new System.Windows.Forms.RichTextBox();
             this.rbpHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -108,6 +108,12 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.bvbStampa = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -328,10 +334,16 @@
             this.bbiSinistra,
             this.bbiCentro,
             this.bbiDestra,
-            this.bbiGiustificato});
+            this.bbiGiustificato,
+            this.barButtonItem16,
+            this.barButtonItem17,
+            this.barButtonItem18,
+            this.barButtonItem19,
+            this.barButtonItem20,
+            this.barButtonItem21});
             this.rbn.Location = new System.Drawing.Point(0, 0);
             this.rbn.Margin = new System.Windows.Forms.Padding(4);
-            this.rbn.MaxItemId = 286;
+            this.rbn.MaxItemId = 292;
             this.rbn.Name = "rbn";
             this.rbn.OptionsMenuMinWidth = 403;
             this.rbn.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -460,7 +472,7 @@
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition2;
+            this.workspaceManager1.TransitionType = pushTransition1;
             // 
             // barButtonItem3
             // 
@@ -684,6 +696,42 @@
             this.bvbStampa.Name = "bvbStampa";
             this.bvbStampa.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.bvbStampa_ItemClick);
             // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "barButtonItem16";
+            this.barButtonItem16.Id = 286;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "barButtonItem17";
+            this.barButtonItem17.Id = 287;
+            this.barButtonItem17.Name = "barButtonItem17";
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "barButtonItem18";
+            this.barButtonItem18.Id = 288;
+            this.barButtonItem18.Name = "barButtonItem18";
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "barButtonItem19";
+            this.barButtonItem19.Id = 289;
+            this.barButtonItem19.Name = "barButtonItem19";
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "barButtonItem20";
+            this.barButtonItem20.Id = 290;
+            this.barButtonItem20.Name = "barButtonItem20";
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "barButtonItem21";
+            this.barButtonItem21.Id = 291;
+            this.barButtonItem21.Name = "barButtonItem21";
+            // 
             // frmAlbyPad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -785,6 +833,12 @@
         private DevExpress.XtraBars.BarButtonItem bbiGiustificato;
         private DevExpress.XtraBars.Ribbon.BackstageViewButtonItem bvbStampa;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
     }
 }
 

@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using DevExpress.LookAndFeel;
 using DevExpress.Office.Crypto;
+using DevExpress.ReportServer.ServiceModel.DataContracts;
 using DevExpress.XtraBars.Objects;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraRichEdit;
@@ -156,6 +157,10 @@ namespace newRepoGonellaAlberto
 
         private void bvbStampa_ItemClick(object sender, BackstageViewItemEventArgs e)
         {
+            clsStampa stampaManager = new clsStampa();
+            stampaManager.rtb = rtb;
+            stampaManager.impostaPagina();
+            stampaManager.stampa();
         }
 
         #endregion
