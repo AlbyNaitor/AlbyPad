@@ -41,6 +41,8 @@
             this.fontSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbiCarattere = new DevExpress.XtraBars.BarButtonItem();
             this.bbiColoreFont = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiIngrandisci = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.allineamentoSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbiSinistra = new DevExpress.XtraBars.BarButtonItem();
             this.bbiCentro = new DevExpress.XtraBars.BarButtonItem();
@@ -61,6 +63,7 @@
             this.bvbApri = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.bvbSalva = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.bvbSalvaConNome = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
+            this.bvbStampa = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barLinkContainerItem1 = new DevExpress.XtraBars.BarLinkContainerItem();
@@ -95,6 +98,13 @@
             this.bsiLIsta = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.rbpAggiungi = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.aggiungiSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
@@ -106,14 +116,11 @@
             this.bbiCopiaTesto = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.bvbStampa = new DevExpress.XtraBars.Ribbon.BackstageViewButtonItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCorsivo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGrassetto = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSottolineato = new DevExpress.XtraBars.BarButtonItem();
+            this.comandiRapidiSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.rbn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -139,6 +146,7 @@
             this.rbpHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.modificaSection,
             this.fontSection,
+            this.comandiRapidiSection,
             this.allineamentoSection});
             this.rbpHome.Name = "rbpHome";
             this.rbpHome.Text = "Home";
@@ -197,6 +205,23 @@
             this.bbiColoreFont.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiColoreFont.ImageOptions.SvgImage")));
             this.bbiColoreFont.Name = "bbiColoreFont";
             this.bbiColoreFont.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiColoreFont_ItemClick);
+            // 
+            // bbiIngrandisci
+            // 
+            this.bbiIngrandisci.Id = 292;
+            this.bbiIngrandisci.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiIngrandisci.ImageOptions.SvgImage")));
+            this.bbiIngrandisci.Name = "bbiIngrandisci";
+            this.bbiIngrandisci.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiIngrandisci.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiIngrandisci_ItemClick);
+            // 
+            // barButtonItem23
+            // 
+            this.barButtonItem23.Caption = "barButtonItem23";
+            this.barButtonItem23.Id = 293;
+            this.barButtonItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem23.ImageOptions.SvgImage")));
+            this.barButtonItem23.Name = "barButtonItem23";
+            this.barButtonItem23.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.barButtonItem23.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem23_ItemClick);
             // 
             // allineamentoSection
             // 
@@ -340,10 +365,16 @@
             this.barButtonItem18,
             this.barButtonItem19,
             this.barButtonItem20,
-            this.barButtonItem21});
+            this.barButtonItem21,
+            this.bbiIngrandisci,
+            this.barButtonItem23,
+            this.barButtonItem24,
+            this.bbiCorsivo,
+            this.bbiGrassetto,
+            this.bbiSottolineato});
             this.rbn.Location = new System.Drawing.Point(0, 0);
             this.rbn.Margin = new System.Windows.Forms.Padding(4);
-            this.rbn.MaxItemId = 292;
+            this.rbn.MaxItemId = 298;
             this.rbn.Name = "rbn";
             this.rbn.OptionsMenuMinWidth = 403;
             this.rbn.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -400,6 +431,13 @@
             this.bvbSalvaConNome.ImageOptions.ItemNormal.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bvbSalvaConNome.ImageOptions.ItemNormal.SvgImage")));
             this.bvbSalvaConNome.Name = "bvbSalvaConNome";
             this.bvbSalvaConNome.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.bvbSalvaConNome_ItemClick);
+            // 
+            // bvbStampa
+            // 
+            this.bvbStampa.Caption = "Stampa";
+            this.bvbStampa.ImageOptions.ItemNormal.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bvbStampa.ImageOptions.ItemNormal.SvgImage")));
+            this.bvbStampa.Name = "bvbStampa";
+            this.bvbStampa.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.bvbStampa_ItemClick);
             // 
             // barEditItem1
             // 
@@ -623,6 +661,48 @@
             this.barButtonItem15.Id = 279;
             this.barButtonItem15.Name = "barButtonItem15";
             // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "barButtonItem16";
+            this.barButtonItem16.Id = 286;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "barButtonItem17";
+            this.barButtonItem17.Id = 287;
+            this.barButtonItem17.Name = "barButtonItem17";
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "barButtonItem18";
+            this.barButtonItem18.Id = 288;
+            this.barButtonItem18.Name = "barButtonItem18";
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "barButtonItem19";
+            this.barButtonItem19.Id = 289;
+            this.barButtonItem19.Name = "barButtonItem19";
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "barButtonItem20";
+            this.barButtonItem20.Id = 290;
+            this.barButtonItem20.Name = "barButtonItem20";
+            // 
+            // barButtonItem21
+            // 
+            this.barButtonItem21.Caption = "barButtonItem21";
+            this.barButtonItem21.Id = 291;
+            this.barButtonItem21.Name = "barButtonItem21";
+            // 
+            // barButtonItem24
+            // 
+            this.barButtonItem24.Caption = "barButtonItem24";
+            this.barButtonItem24.Id = 294;
+            this.barButtonItem24.Name = "barButtonItem24";
+            // 
             // rbpAggiungi
             // 
             this.rbpAggiungi.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -689,48 +769,42 @@
             this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // bvbStampa
+            // bbiCorsivo
             // 
-            this.bvbStampa.Caption = "Stampa";
-            this.bvbStampa.ImageOptions.ItemNormal.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bvbStampa.ImageOptions.ItemNormal.SvgImage")));
-            this.bvbStampa.Name = "bvbStampa";
-            this.bvbStampa.ItemClick += new DevExpress.XtraBars.Ribbon.BackstageViewItemEventHandler(this.bvbStampa_ItemClick);
+            this.bbiCorsivo.Caption = "barButtonItem22";
+            this.bbiCorsivo.Id = 295;
+            this.bbiCorsivo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCorsivo.ImageOptions.SvgImage")));
+            this.bbiCorsivo.Name = "bbiCorsivo";
+            this.bbiCorsivo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiCorsivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCorsivo_ItemClick);
             // 
-            // barButtonItem16
+            // bbiGrassetto
             // 
-            this.barButtonItem16.Caption = "barButtonItem16";
-            this.barButtonItem16.Id = 286;
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.bbiGrassetto.Caption = "barButtonItem25";
+            this.bbiGrassetto.Id = 296;
+            this.bbiGrassetto.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiGrassetto.ImageOptions.SvgImage")));
+            this.bbiGrassetto.Name = "bbiGrassetto";
+            this.bbiGrassetto.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiGrassetto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGrassetto_ItemClick);
             // 
-            // barButtonItem17
+            // bbiSottolineato
             // 
-            this.barButtonItem17.Caption = "barButtonItem17";
-            this.barButtonItem17.Id = 287;
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.bbiSottolineato.Caption = "barButtonItem26";
+            this.bbiSottolineato.Id = 297;
+            this.bbiSottolineato.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSottolineato.ImageOptions.SvgImage")));
+            this.bbiSottolineato.Name = "bbiSottolineato";
+            this.bbiSottolineato.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiSottolineato.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSottolineato_ItemClick);
             // 
-            // barButtonItem18
+            // comandiRapidiSection
             // 
-            this.barButtonItem18.Caption = "barButtonItem18";
-            this.barButtonItem18.Id = 288;
-            this.barButtonItem18.Name = "barButtonItem18";
-            // 
-            // barButtonItem19
-            // 
-            this.barButtonItem19.Caption = "barButtonItem19";
-            this.barButtonItem19.Id = 289;
-            this.barButtonItem19.Name = "barButtonItem19";
-            // 
-            // barButtonItem20
-            // 
-            this.barButtonItem20.Caption = "barButtonItem20";
-            this.barButtonItem20.Id = 290;
-            this.barButtonItem20.Name = "barButtonItem20";
-            // 
-            // barButtonItem21
-            // 
-            this.barButtonItem21.Caption = "barButtonItem21";
-            this.barButtonItem21.Id = 291;
-            this.barButtonItem21.Name = "barButtonItem21";
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiCorsivo);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiGrassetto);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiSottolineato);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiIngrandisci);
+            this.comandiRapidiSection.ItemLinks.Add(this.barButtonItem23);
+            this.comandiRapidiSection.Name = "comandiRapidiSection";
+            this.comandiRapidiSection.Text = "Comandi rapidi";
             // 
             // frmAlbyPad
             // 
@@ -839,6 +913,13 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem19;
         private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
+        private DevExpress.XtraBars.BarButtonItem bbiIngrandisci;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
+        private DevExpress.XtraBars.BarButtonItem bbiCorsivo;
+        private DevExpress.XtraBars.BarButtonItem bbiGrassetto;
+        private DevExpress.XtraBars.BarButtonItem bbiSottolineato;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup comandiRapidiSection;
     }
 }
 

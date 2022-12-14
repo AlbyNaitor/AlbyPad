@@ -90,6 +90,25 @@ namespace newRepoGonellaAlberto
         private void bbiDestra_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.SelectionAlignment = HorizontalAlignment.Right;
 
         private void bbiEPuntato_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.SelectionBullet = true;
+
+        private void bbiIngrandisci_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try { rtb.SelectionFont = cambiaDimensioneFont(rtb.SelectionFont, 2); }
+            catch { }
+        }
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try { rtb.SelectionFont = cambiaDimensioneFont(rtb.SelectionFont, -2); }
+            catch { }
+        }
+
+        private void bbiCorsivo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) =>
+            rtb.SelectionFont = rtb.SelectionFont.Style != FontStyle.Italic ? new Font(rtb.SelectionFont, FontStyle.Italic) : new Font(rtb.SelectionFont, FontStyle.Regular);
+        private void bbiGrassetto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) =>
+            rtb.SelectionFont = rtb.SelectionFont.Style != FontStyle.Bold ? new Font(rtb.SelectionFont, FontStyle.Bold) : new Font(rtb.SelectionFont, FontStyle.Regular);
+        private void bbiSottolineato_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) =>
+            rtb.SelectionFont = rtb.SelectionFont.Style != FontStyle.Underline ? new Font(rtb.SelectionFont, FontStyle.Underline) : new Font(rtb.SelectionFont, FontStyle.Regular);
+
         #endregion
 
         #region implementazione funzioni
@@ -163,6 +182,13 @@ namespace newRepoGonellaAlberto
             stampaManager.stampa();
         }
 
+        Font cambiaDimensioneFont(Font fntStart, int intDelta)
+        {
+            Font fntRetVal = new Font(fntStart.FontFamily.Name,
+                                    fntStart.Size + intDelta,
+                                    fntStart.Style);
+            return fntRetVal;
+        }
         #endregion
     }
 }
