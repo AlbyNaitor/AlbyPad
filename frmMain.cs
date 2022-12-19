@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
-using System.Windows.Media;
 using DevExpress.LookAndFeel;
-using DevExpress.Office.Crypto;
-using DevExpress.ReportServer.ServiceModel.DataContracts;
-using DevExpress.XtraBars.Objects;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraRichEdit;
-using static DevExpress.Diagram.Core.Native.Either;
+using Microsoft.VisualBasic;
 
 namespace newRepoGonellaAlberto
 {
@@ -109,6 +95,15 @@ namespace newRepoGonellaAlberto
         private void bbiSottolineato_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) =>
             rtb.SelectionFont = rtb.SelectionFont.Style != FontStyle.Underline ? new Font(rtb.SelectionFont, FontStyle.Underline) : new Font(rtb.SelectionFont, FontStyle.Regular);
 
+        private void bbiApice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.SelectionCharOffset = rtb.SelectionCharOffset == 2 ? 0 : 2;
+        private void bbiPedice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.SelectionCharOffset = rtb.SelectionCharOffset == -2 ? 0 : -2;
+
+        private void bbiCerca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => cerca();
+        private void bbiAbout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => new abbMain().ShowDialog();
+
+        private void bbiCtrlZ_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.Undo();
+        private void bbiCtrlY_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) => rtb.Redo();
+
         #endregion
 
         #region implementazione funzioni
@@ -169,11 +164,6 @@ namespace newRepoGonellaAlberto
 
         private void copia() => rtb.Copy();
 
-
-        private void bbiENumerato_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-        }
-
         private void bvbStampa_ItemClick(object sender, BackstageViewItemEventArgs e)
         {
             clsStampa stampaManager = new clsStampa();
@@ -189,6 +179,15 @@ namespace newRepoGonellaAlberto
                                     fntStart.Style);
             return fntRetVal;
         }
-        #endregion
+
+        private void cerca()
+        {
+            string inserito = Interaction.InputBox("Quale parola o frase vuoi cercare?", "Cerca").Trim();
+
+            if(!string.IsNullOrEmpty(inserito))         
+                rtb.Select(rtb.Find(inserito), inserito.Length);          
+        }
+
+        #endregion    
     }
 }

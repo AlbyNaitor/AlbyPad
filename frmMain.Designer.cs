@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlbyPad));
-            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.rtb = new System.Windows.Forms.RichTextBox();
             this.rbpHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -41,6 +41,10 @@
             this.fontSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbiCarattere = new DevExpress.XtraBars.BarButtonItem();
             this.bbiColoreFont = new DevExpress.XtraBars.BarButtonItem();
+            this.comandiRapidiSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbiCorsivo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGrassetto = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSottolineato = new DevExpress.XtraBars.BarButtonItem();
             this.bbiIngrandisci = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.allineamentoSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -117,10 +121,16 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.bbiCorsivo = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiGrassetto = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiSottolineato = new DevExpress.XtraBars.BarButtonItem();
-            this.comandiRapidiSection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
+            this.cercaSelection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bbiCerca = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiApice = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPedice = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiAbout = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCtrlZ = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCtrlY = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -133,10 +143,10 @@
             this.rtb.BackColor = System.Drawing.Color.White;
             this.rtb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtb.Location = new System.Drawing.Point(100, 40);
-            this.rtb.Margin = new System.Windows.Forms.Padding(50, 15, 50, 20);
+            this.rtb.Location = new System.Drawing.Point(82, 33);
+            this.rtb.Margin = new System.Windows.Forms.Padding(41, 12, 41, 17);
             this.rtb.Name = "rtb";
-            this.rtb.Size = new System.Drawing.Size(1314, 1026);
+            this.rtb.Size = new System.Drawing.Size(1075, 850);
             this.rtb.TabIndex = 2;
             this.rtb.Text = "";
             this.rtb.TextChanged += new System.EventHandler(this.rtb_TextChanged_1);
@@ -147,7 +157,8 @@
             this.modificaSection,
             this.fontSection,
             this.comandiRapidiSection,
-            this.allineamentoSection});
+            this.allineamentoSection,
+            this.cercaSelection});
             this.rbpHome.Name = "rbpHome";
             this.rbpHome.Text = "Home";
             // 
@@ -156,6 +167,8 @@
             this.modificaSection.ItemLinks.Add(this.bbiIncolla);
             this.modificaSection.ItemLinks.Add(this.bbiCopiaTest);
             this.modificaSection.ItemLinks.Add(this.bbiTagliaTesto);
+            this.modificaSection.ItemLinks.Add(this.bbiCtrlZ);
+            this.modificaSection.ItemLinks.Add(this.bbiCtrlY);
             this.modificaSection.Name = "modificaSection";
             this.modificaSection.Text = "Modifica";
             // 
@@ -206,8 +219,46 @@
             this.bbiColoreFont.Name = "bbiColoreFont";
             this.bbiColoreFont.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiColoreFont_ItemClick);
             // 
+            // comandiRapidiSection
+            // 
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiCorsivo);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiGrassetto);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiSottolineato);
+            this.comandiRapidiSection.ItemLinks.Add(this.bbiIngrandisci);
+            this.comandiRapidiSection.ItemLinks.Add(this.barButtonItem23);
+            this.comandiRapidiSection.Name = "comandiRapidiSection";
+            this.comandiRapidiSection.Text = "Comandi rapidi";
+            // 
+            // bbiCorsivo
+            // 
+            this.bbiCorsivo.Caption = "Corsivo";
+            this.bbiCorsivo.Id = 295;
+            this.bbiCorsivo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCorsivo.ImageOptions.SvgImage")));
+            this.bbiCorsivo.Name = "bbiCorsivo";
+            this.bbiCorsivo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiCorsivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCorsivo_ItemClick);
+            // 
+            // bbiGrassetto
+            // 
+            this.bbiGrassetto.Caption = "Grassetto";
+            this.bbiGrassetto.Id = 296;
+            this.bbiGrassetto.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiGrassetto.ImageOptions.SvgImage")));
+            this.bbiGrassetto.Name = "bbiGrassetto";
+            this.bbiGrassetto.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiGrassetto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGrassetto_ItemClick);
+            // 
+            // bbiSottolineato
+            // 
+            this.bbiSottolineato.Caption = "Sottolineato";
+            this.bbiSottolineato.Id = 297;
+            this.bbiSottolineato.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSottolineato.ImageOptions.SvgImage")));
+            this.bbiSottolineato.Name = "bbiSottolineato";
+            this.bbiSottolineato.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiSottolineato.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSottolineato_ItemClick);
+            // 
             // bbiIngrandisci
             // 
+            this.bbiIngrandisci.Caption = "Font - ingrandisci";
             this.bbiIngrandisci.Id = 292;
             this.bbiIngrandisci.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiIngrandisci.ImageOptions.SvgImage")));
             this.bbiIngrandisci.Name = "bbiIngrandisci";
@@ -216,7 +267,7 @@
             // 
             // barButtonItem23
             // 
-            this.barButtonItem23.Caption = "barButtonItem23";
+            this.barButtonItem23.Caption = "Font - rimpicciolisci";
             this.barButtonItem23.Id = 293;
             this.barButtonItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem23.ImageOptions.SvgImage")));
             this.barButtonItem23.Name = "barButtonItem23";
@@ -228,6 +279,8 @@
             this.allineamentoSection.ItemLinks.Add(this.bbiSinistra);
             this.allineamentoSection.ItemLinks.Add(this.bbiCentro);
             this.allineamentoSection.ItemLinks.Add(this.bbiDestra);
+            this.allineamentoSection.ItemLinks.Add(this.bbiApice);
+            this.allineamentoSection.ItemLinks.Add(this.bbiPedice);
             this.allineamentoSection.Name = "allineamentoSection";
             this.allineamentoSection.Text = "Allineamento";
             // 
@@ -309,7 +362,6 @@
             this.rbn.ApplicationButtonText = "File";
             this.rbn.AutoHideEmptyItems = true;
             this.rbn.AutoSizeItems = true;
-            this.rbn.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(37, 36, 37, 36);
             this.rbn.ExpandCollapseItem.Id = 0;
             this.rbn.ForeColor = System.Drawing.Color.Transparent;
             this.rbn.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -371,12 +423,18 @@
             this.barButtonItem24,
             this.bbiCorsivo,
             this.bbiGrassetto,
-            this.bbiSottolineato});
+            this.bbiSottolineato,
+            this.barButtonItem22,
+            this.bbiCerca,
+            this.bbiApice,
+            this.barButtonItem25,
+            this.bbiPedice,
+            this.bbiAbout,
+            this.bbiCtrlZ,
+            this.bbiCtrlY});
             this.rbn.Location = new System.Drawing.Point(0, 0);
-            this.rbn.Margin = new System.Windows.Forms.Padding(4);
-            this.rbn.MaxItemId = 298;
+            this.rbn.MaxItemId = 306;
             this.rbn.Name = "rbn";
-            this.rbn.OptionsMenuMinWidth = 403;
             this.rbn.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpHome,
             this.rbpAggiungi});
@@ -386,7 +444,7 @@
             this.rbn.ShowItemCaptionsInCaptionBar = true;
             this.rbn.ShowItemCaptionsInPageHeader = true;
             this.rbn.ShowQatLocationSelector = false;
-            this.rbn.Size = new System.Drawing.Size(1514, 256);
+            this.rbn.Size = new System.Drawing.Size(1239, 219);
             this.rbn.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
             // backstageViewControl1
@@ -396,11 +454,10 @@
             this.backstageViewControl1.Items.Add(this.bvbSalva);
             this.backstageViewControl1.Items.Add(this.bvbSalvaConNome);
             this.backstageViewControl1.Items.Add(this.bvbStampa);
-            this.backstageViewControl1.Location = new System.Drawing.Point(0, 734);
-            this.backstageViewControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.backstageViewControl1.Location = new System.Drawing.Point(0, 612);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.rbn;
-            this.backstageViewControl1.Size = new System.Drawing.Size(103, 117);
+            this.backstageViewControl1.Size = new System.Drawing.Size(84, 98);
             this.backstageViewControl1.TabIndex = 1;
             this.backstageViewControl1.VisibleInDesignTime = true;
             // 
@@ -510,7 +567,7 @@
             // workspaceManager1
             // 
             this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition1;
+            this.workspaceManager1.TransitionType = pushTransition2;
             // 
             // barButtonItem3
             // 
@@ -601,14 +658,13 @@
             // 
             // popupMenu1
             // 
-            this.popupMenu1.ItemLinks.Add(this.bbiEPuntato);
             this.popupMenu1.ItemLinks.Add(this.bbiENumerato);
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.rbn;
             // 
             // bbiEPuntato
             // 
-            this.bbiEPuntato.Caption = "Puntato";
+            this.bbiEPuntato.Caption = "Elenco puntato";
             this.bbiEPuntato.Id = 280;
             this.bbiEPuntato.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiEPuntato.ImageOptions.SvgImage")));
             this.bbiEPuntato.Name = "bbiEPuntato";
@@ -620,7 +676,6 @@
             this.bbiENumerato.Id = 281;
             this.bbiENumerato.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiENumerato.ImageOptions.SvgImage")));
             this.bbiENumerato.Name = "bbiENumerato";
-            this.bbiENumerato.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiENumerato_ItemClick);
             // 
             // barButtonItem11
             // 
@@ -713,7 +768,7 @@
             // aggiungiSection
             // 
             this.aggiungiSection.ItemLinks.Add(this.bbiImmagine);
-            this.aggiungiSection.ItemLinks.Add(this.bbiElenco);
+            this.aggiungiSection.ItemLinks.Add(this.bbiEPuntato);
             this.aggiungiSection.Name = "aggiungiSection";
             this.aggiungiSection.Text = "Aggiungi";
             // 
@@ -742,10 +797,11 @@
             this.panel1.Controls.Add(this.rtb);
             this.panel1.Controls.Add(this.backstageViewControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 256);
+            this.panel1.Location = new System.Drawing.Point(0, 219);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(100, 40, 100, 15);
-            this.panel1.Size = new System.Drawing.Size(1514, 1081);
+            this.panel1.Padding = new System.Windows.Forms.Padding(82, 33, 82, 12);
+            this.panel1.Size = new System.Drawing.Size(1239, 895);
             this.panel1.TabIndex = 8;
             // 
             // bbiCopiaTesto
@@ -769,53 +825,92 @@
             this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
-            // bbiCorsivo
+            // barButtonItem22
             // 
-            this.bbiCorsivo.Caption = "barButtonItem22";
-            this.bbiCorsivo.Id = 295;
-            this.bbiCorsivo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCorsivo.ImageOptions.SvgImage")));
-            this.bbiCorsivo.Name = "bbiCorsivo";
-            this.bbiCorsivo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiCorsivo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCorsivo_ItemClick);
+            this.barButtonItem22.Caption = "barButtonItem22";
+            this.barButtonItem22.Id = 298;
+            this.barButtonItem22.Name = "barButtonItem22";
             // 
-            // bbiGrassetto
+            // cercaSelection
             // 
-            this.bbiGrassetto.Caption = "barButtonItem25";
-            this.bbiGrassetto.Id = 296;
-            this.bbiGrassetto.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiGrassetto.ImageOptions.SvgImage")));
-            this.bbiGrassetto.Name = "bbiGrassetto";
-            this.bbiGrassetto.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiGrassetto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGrassetto_ItemClick);
+            this.cercaSelection.ItemLinks.Add(this.bbiCerca);
+            this.cercaSelection.ItemLinks.Add(this.bbiAbout);
+            this.cercaSelection.Name = "cercaSelection";
+            this.cercaSelection.Text = "Altro";
             // 
-            // bbiSottolineato
+            // bbiCerca
             // 
-            this.bbiSottolineato.Caption = "barButtonItem26";
-            this.bbiSottolineato.Id = 297;
-            this.bbiSottolineato.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSottolineato.ImageOptions.SvgImage")));
-            this.bbiSottolineato.Name = "bbiSottolineato";
-            this.bbiSottolineato.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiSottolineato.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSottolineato_ItemClick);
+            this.bbiCerca.Caption = "Cerca";
+            this.bbiCerca.Id = 299;
+            this.bbiCerca.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCerca.ImageOptions.SvgImage")));
+            this.bbiCerca.Name = "bbiCerca";
+            this.bbiCerca.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCerca_ItemClick);
             // 
-            // comandiRapidiSection
+            // bbiApice
             // 
-            this.comandiRapidiSection.ItemLinks.Add(this.bbiCorsivo);
-            this.comandiRapidiSection.ItemLinks.Add(this.bbiGrassetto);
-            this.comandiRapidiSection.ItemLinks.Add(this.bbiSottolineato);
-            this.comandiRapidiSection.ItemLinks.Add(this.bbiIngrandisci);
-            this.comandiRapidiSection.ItemLinks.Add(this.barButtonItem23);
-            this.comandiRapidiSection.Name = "comandiRapidiSection";
-            this.comandiRapidiSection.Text = "Comandi rapidi";
+            this.bbiApice.Id = 300;
+            this.bbiApice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiApice.ImageOptions.SvgImage")));
+            this.bbiApice.Name = "bbiApice";
+            this.bbiApice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiApice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiApice_ItemClick);
+            // 
+            // barButtonItem25
+            // 
+            this.barButtonItem25.Caption = "barButtonItem25";
+            this.barButtonItem25.Id = 301;
+            this.barButtonItem25.Name = "barButtonItem25";
+            // 
+            // barButtonItem26
+            // 
+            this.barButtonItem26.Caption = "barButtonItem25";
+            this.barButtonItem26.Id = 300;
+            this.barButtonItem26.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem26.ImageOptions.SvgImage")));
+            this.barButtonItem26.Name = "barButtonItem26";
+            this.barButtonItem26.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiPedice
+            // 
+            this.bbiPedice.Caption = "barButtonItem27";
+            this.bbiPedice.Id = 302;
+            this.bbiPedice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPedice.ImageOptions.SvgImage")));
+            this.bbiPedice.Name = "bbiPedice";
+            this.bbiPedice.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiPedice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPedice_ItemClick);
+            // 
+            // bbiAbout
+            // 
+            this.bbiAbout.Caption = "About";
+            this.bbiAbout.Id = 303;
+            this.bbiAbout.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiAbout.ImageOptions.SvgImage")));
+            this.bbiAbout.Name = "bbiAbout";
+            this.bbiAbout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAbout_ItemClick);
+            // 
+            // bbiCtrlZ
+            // 
+            this.bbiCtrlZ.Id = 304;
+            this.bbiCtrlZ.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCtrlZ.ImageOptions.SvgImage")));
+            this.bbiCtrlZ.Name = "bbiCtrlZ";
+            this.bbiCtrlZ.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.bbiCtrlZ.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCtrlZ_ItemClick);
+            // 
+            // bbiCtrlY
+            // 
+            this.bbiCtrlY.Id = 305;
+            this.bbiCtrlY.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiCtrlY.ImageOptions.SvgImage")));
+            this.bbiCtrlY.Name = "bbiCtrlY";
+            this.bbiCtrlY.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.bbiCtrlY.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCtrlY_ItemClick);
             // 
             // frmAlbyPad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1514, 1337);
+            this.ClientSize = new System.Drawing.Size(1239, 1114);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rbn);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmAlbyPad";
             this.Text = "AlbyPad ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAlbyPad_FormClosing);
@@ -920,6 +1015,16 @@
         private DevExpress.XtraBars.BarButtonItem bbiGrassetto;
         private DevExpress.XtraBars.BarButtonItem bbiSottolineato;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup comandiRapidiSection;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup cercaSelection;
+        private DevExpress.XtraBars.BarButtonItem bbiCerca;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
+        private DevExpress.XtraBars.BarButtonItem bbiApice;
+        private DevExpress.XtraBars.BarButtonItem bbiPedice;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem bbiAbout;
+        private DevExpress.XtraBars.BarButtonItem bbiCtrlZ;
+        private DevExpress.XtraBars.BarButtonItem bbiCtrlY;
     }
 }
 
